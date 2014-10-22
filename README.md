@@ -9,7 +9,7 @@ Just add this role to any server you want to pimp like that. It doesn't do much,
 * Installs the Phusion Passenger Apache module.
 * Reloads Apache.
 
-This means you will also receive the "standard" system-wide Ruby under `/usr/bin`. So if you have virtual hosts that need other Rubies, make sure those other Rubies are also installed, or are available via a Ruby version manager. Then set `PassengerRuby` to that particular Ruby for that particular virtual host.
+This means you will also receive the "standard" system-wide Ruby under `/usr/bin` because Phusion's Passenger packages depend on it. So if you have virtual hosts that need other Rubies, make sure those other Rubies are also installed, or are available via a Ruby version manager. Then set `PassengerRuby` to that particular Ruby for that particular virtual host.
 
 ## Adding to your own Ansible dir
 
