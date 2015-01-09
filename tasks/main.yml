@@ -40,6 +40,9 @@
 - name: Install Phusion Passenger package
   apt: pkg=libapache2-mod-passenger state=installed update_cache=true
 
+- name: Configure mod_passenger's system-wide options
+  template: src=passenger.conf.j2 dest="/etc/apache2/conf.d/passenger.conf"
+
 - name: Enable Passenger module
   command: a2enmod passenger
   notify:
