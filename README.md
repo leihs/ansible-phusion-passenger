@@ -1,6 +1,6 @@
 # ansible-phusion-passenger
 
-Turns any Debian GNU/Linux 7.x (wheezy) server into a Rails server using Phusion Passenger.
+Turns any Debian GNU/Linux 8.1 (jessie) server into a Rails server using Phusion Passenger.
 
 Just add this role to any server you want to pimp like that. It doesn't do much, just:
 
