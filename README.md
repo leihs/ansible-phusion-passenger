@@ -15,7 +15,7 @@ This means you will also receive the "standard" system-wide Ruby under `/usr/bin
 
 If you stick reasonably closely to Ansible's recommended directory layout and if you keep your Ansible stuff in a git repo, you can add this role as a submodule:
 
-    git submodule add https://github.com/psy-q/ansible-phusion-passenger.git roles/servers/rails
+    git submodule add https://github.com/leihs/ansible-phusion-passenger.git roles/servers/rails
     git submodule init
     git submodule update
 
