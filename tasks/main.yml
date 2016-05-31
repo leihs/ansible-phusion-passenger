@@ -3,7 +3,7 @@
   apt: pkg={{ item }} state=present update_cache=true cache_valid_time=3600
   with_items:
     - apache2
-    - apache2-threaded-dev
+    - apache2-dev
     - apt-transport-https # So you can install Passenger from repos
     - autoconf
     - automake
@@ -34,8 +34,13 @@
 - name: Add GPG key for Phusion Passenger packages
   apt_key: id=AC40B2F7 url=http://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x561F9B9CAC40B2F7 state=present
 
-- name: Add the Phusion Passenger repository (jessie)
+- name: Add the Phusion Passenger repository (Debian jessie)
   apt_repository: repo='deb https://oss-binaries.phusionpassenger.com/apt/passenger jessie main' state=present
+  when: ansible_distribution == 'Debian' and ansible_distribution_release == 'jessie'
+
+- name: Add the Phusion Passenger repository (Ubuntu 16.04)
+  apt_repository: repo='deb https://oss-binaries.phusionpassenger.com/apt/passenger xenial main' state=present
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial'
 
 - name: Install Phusion Passenger package
   apt: pkg=libapache2-mod-passenger state=installed update_cache=true
